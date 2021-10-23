@@ -4,28 +4,32 @@
 let express = require('express');
 let router = express.Router();
 
+// indicate index.js in the controller folder 
+let indexController = require('../controllers/index');
+
+
 /* route to call and load 'Home' page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home', page: 'home' });
-});
+// indicate the actual page on index.js in the controller folder
+router.get('/', indexController.displayHomePage);
+
 /* route to call and load 'Home' page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home', page: 'home' });
-});
+// indicate the actual page on index.js in the controller folder
+router.get('/home', indexController.displayHomePage);
+
 /* route to call and load 'about' page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About', page: 'about' });
-});
+// indicate the actual page on index.js in the controller folder
+router.get('/about', indexController.displayAboutPage);
+
 /* route to call and load 'projects' page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects', page: 'projects' });
-});
+// indicate the actual page on index.js in the controller folder
+router.get('/projects', indexController.displayProjectsPage);
+
 /* route to call and load 'services' page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services', page: 'services' });
-});
+// indicate the actual page on index.js in the controller folder
+router.get('/services', indexController.displayServicesPage);
+
 /* route to call and load 'contact' page. */
-router.get('/Contact', function(req, res, next) {
-  res.render('index', { title: 'Contact', page: 'contact' });
-});
+// indicate the actual page on index.js in the controller folder
+router.get('/Contact', indexController.displayContactPage);
+
 module.exports = router;
