@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
 
 // GET route for Displaying Add page - Create operation
 router.get('/add', (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact'});
+    res.render('contact/add', {title: 'Add Contact'})
 });
 
 
@@ -65,14 +65,14 @@ router.get('/edit/:id', (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('contact/edit', {title: 'Edit Contact', contact: contactToEdit})
+            res.render('contact/edit', {title: 'Edit Contact', contact: ContactToEdit})
         }
     });
 });
 
 // Post route for Processing Edit page - Update operation
 router.post('/edit/:id', (req, res, next) => {
-    let id = req.params.id
+    let id = req.params.id;
 
     let updatedContact = Contact({
         "_id": id,
@@ -81,7 +81,7 @@ router.post('/edit/:id', (req, res, next) => {
         "email": req.body.email
     });
 
-    Contact.updateOne({_id, id}, updatedContact, (err) => {
+    Contact.updateOne({_id: id}, updatedContact, (err) => {
         if(err)
         {
             console.log(err);
@@ -89,8 +89,8 @@ router.post('/edit/:id', (req, res, next) => {
         }
         else
         {
-             // refresh the contact list
-             res.redirect('/business-contact');
+            // refresh the contact list
+            res.redirect('/business-contact');
         }
     });
 });
@@ -107,8 +107,8 @@ router.get('/delete/:id', (req, res, next) => {
         }
         else
         {
-             // refresh the contact list
-             res.redirect('/business-contact');
+            // refresh the contact list
+            res.redirect('/business-contact');
         }
     });
 });
