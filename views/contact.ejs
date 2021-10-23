@@ -1,0 +1,39 @@
+<%- include('./components/head.ejs'); %>
+
+<%- include('./components/header.ejs'); %>
+
+
+<!-- create a content(table) on /book-list. It does not have icon or click button but it has specific page with correct web-address-->
+
+<main class="container">
+    <h1><%= title %></h1>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col1">#</th>
+                        <th scope="col2">Name</th>
+                        <th scope="col3">Number</th>
+                        <th scope="col4">Email Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count =0; count< ContactList.length; count++) { %>
+                        <tr>
+                            <th scope="row"> <%= count +1 %></th>                        
+                            <td><%= ContactList[count].name %></td>
+                            <td><%= ContactList[count].number %></td>
+                            <td><%= ContactList[count].email %></td>
+                        </tr>                      
+                    <%} %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<%- include('./components/footer.ejs'); %>
+
+
+<%- include('./components/script.ejs'); %>
