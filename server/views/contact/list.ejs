@@ -1,12 +1,17 @@
-<%- include('./components/head.ejs'); %>
+<%- include('../components/head.ejs'); %>
 
-<%- include('./components/header.ejs'); %>
+<%- include('../components/header.ejs'); %>
 
 
 <!-- create a content(table) on /book-list. It does not have icon or click button but it has specific page with correct web-address-->
 
 <main class="container">
+    <br>
     <h1><%= title %></h1>
+    <br>
+    <a href="/business-contact/add" class="btn btn-secondary" role="button">
+    <i class = "fas fa-plus-circle"></i> Add a contact</a>
+    <br>
     <div class="row">
         <div class="col">
             <table class="table">
@@ -14,8 +19,10 @@
                     <tr>
                         <th scope="col1">#</th>
                         <th scope="col2">Name</th>
-                        <th scope="col3">Number</th>
+                        <th scope="col3">Phone Number</th>
                         <th scope="col4">Email Address</th>
+                        <th scope="col5"></th>
+                        <th scope="col6"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +32,14 @@
                             <td><%= ContactList[count].name %></td>
                             <td><%= ContactList[count].number %></td>
                             <td><%= ContactList[count].email %></td>
+                            <td scope="col5">
+                                <a href="/business-contact/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i>   Edit</a>
+                            </td>
+                            <td scope="col6">
+                                <a href="/business-contact/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i>   Delete</a>
+                            </td>
                         </tr>                      
                     <%} %>
                 </tbody>
@@ -33,7 +48,7 @@
     </div>
 </main>
 
-<%- include('./components/footer.ejs'); %>
+<%- include('../components/footer.ejs'); %>
 
 
-<%- include('./components/script.ejs'); %>
+<%- include('../components/script.ejs'); %>
