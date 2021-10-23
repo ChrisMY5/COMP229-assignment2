@@ -10,23 +10,23 @@ let Uer = userModel.User; //alias
 // Called by router.get on index.js in the route folder
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', {title: 'Home', page: 'home'});
+    res.render('index', {title: 'Home', page: 'home', displayName: req.user ? req.user.displayName: ''});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('index', {title: 'About', page: 'about'});
+    res.render('index', {title: 'About', page: 'about', displayName: req.user ? req.user.displayName: ''});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('index', {title: 'Projects', page: 'projects'});
+    res.render('index', {title: 'Projects', page: 'projects', displayName: req.user ? req.user.displayName: ''});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('index', {title: 'Services', page: 'services'});
+    res.render('index', {title: 'Services', page: 'services', displayName: req.user ? req.user.displayName: ''});
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('index', {title: 'Contact', page: 'contact'});
+    res.render('index', {title: 'Contact', page: 'contact', displayName: req.user ? req.user.displayName: ''});
 }
 
 module.exports.displayLoginPage = (req, res, next) => {
