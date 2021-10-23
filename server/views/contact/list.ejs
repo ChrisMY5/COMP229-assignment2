@@ -9,7 +9,7 @@
     <br>
     <h1><%= title %></h1>
     <br>
-    <% if(typeof displayName == 'sting' && displayName) { %> 
+    <% if(typeof displayName == 'string' && displayName) { %> 
     <a href="/business-contact/add" class="btn btn-primary" role="button">
     <i class = "fas fa-plus-circle"></i> Add a contact</a>
     <% } %>
@@ -24,7 +24,7 @@
                         <th scope="col3">Phone Number</th>
                         <th scope="col4">Email Address</th>
                         
-                        <% if(typeof displayName == 'sting' && displayName) { %> 
+                        <% if(typeof displayName == 'string' && displayName) { %> 
                             <th scope="col5"></th>
                             <th scope="col6"></th>
                         <% } %>
@@ -38,7 +38,7 @@
                             <td><%= ContactList[count].number %></td>
                             <td><%= ContactList[count].email %></td>
 
-                            <% if(typeof displayName == 'sting' && displayName) { %>
+                            <% if(typeof displayName == 'string' && displayName) { %>
                             <td scope="col5">
                                 <a href="/business-contact/edit/<%= ContactList[count]._id %>" class="btn btn-secondary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>   Update</a>

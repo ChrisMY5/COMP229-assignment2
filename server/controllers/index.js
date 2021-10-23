@@ -1,11 +1,11 @@
-let express = require ('express');
+let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
 //define the user model instance
 let userModel = require('../models/user');
-let Uer = userModel.User; //alias
+let User = userModel.User; //alias
 
 // Called by router.get on index.js in the route folder
 
@@ -49,22 +49,22 @@ module.exports.displayLoginPage = (req, res, next) => {
 module.exports.processLoginPage = (req, res, next) => {
     passport.authenticate('local',
     (err, user, info) => {
-        //server err?
+        // server err?
         if(err)
         {
             return next(err);
         }
-        //Is there a user login error?
+        // is there a user login error?
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
         }
         req.login(user, (err) => {
-            //server error?
+            // server error?
             if(err)
             {
-                return next(err)
+                return next(err);
             }
             return res.redirect('/business-contact');
         })
@@ -127,7 +127,7 @@ module.exports.processRegisterPage = (req, res, next) => {
             */
 
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/book-list')
+                res.redirect('/business-contact')
             });
         }
     });

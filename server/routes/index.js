@@ -32,19 +32,20 @@ router.get('/services', indexController.displayServicesPage);
 // indicate the actual page on index.js in the controller folder
 router.get('/Contact', indexController.displayContactPage);
 
-// GET route for Displaying Login page - Create operation
+
+/* GET Route for displaying the Login page */
 router.get('/login', indexController.displayLoginPage);
 
-// Post route for Processing Login page - Create operation
+/* POST Route for processing the Login page */
 router.post('/login', indexController.processLoginPage);
 
-// GET route for Displaying register page - Create operation
+/* GET Route for displaying the Register page */
 router.get('/register', indexController.displayRegisterPage);
 
-// Post route for Processing register page - Create operation
+/* POST Route for processing the Register page */
 router.post('/register', indexController.processRegisterPage);
 
-// GET to perform Contact logout
-router.get('/logout/:id', indexController.performLogout);
+/* GET to perform UserLogout */
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;
