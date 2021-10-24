@@ -4,6 +4,8 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
+let jwt = require('jsonwebtoken');
+
 let passport = require('passport'); 
 
 // connect to the Contact Model
