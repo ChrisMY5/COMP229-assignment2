@@ -1,3 +1,6 @@
+/* Man Young Oh / 301161472 / COMP229-005 */
+
+// connect to mongoDB Atlas instead of local DB
 module.exports =
 {
     //"URI": "mongodb://localhost/business_contact"

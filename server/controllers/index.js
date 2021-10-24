@@ -1,3 +1,5 @@
+/* Man Young Oh / 301161472 / COMP229-005 */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -7,7 +9,7 @@ let passport = require('passport');
 let userModel = require('../models/user');
 let User = userModel.User; //alias
 
-// Called by router.get on index.js in the route folder
+// final connection of each page, called by router.get on index.js in the route folder
 
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', {title: 'Home', page: 'home', displayName: req.user ? req.user.displayName: ''});

@@ -1,7 +1,11 @@
+/* Man Young Oh / 301161472 / COMP229-005 */
+
 // require modules for the User Model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
+
+// declare all schemas of user's properties
 let User = mongoose.Schema
 (
     {
@@ -21,30 +25,30 @@ let User = mongoose.Schema
             required: 'password is required'
         }
         */
-       email: 
-       {
+        email: 
+        {
             type: String,
             default: '',
             trim: true,
             required: 'email address is required'
-       },
-       displayName: 
-       {
+        },
+        displayName: 
+        {
             type: String,
             default: '',
             trim: true,
-            required: 'Display Name is required'
-       },
-       created: 
-       {
+            required: 'display Name is required'
+        },
+        created: 
+        {
             type: Date,
             default: Date.now
-       },
-       update: 
-       {
+        },
+        update: 
+        {
             type: Date,
             default: Date.now
-       }
+        }
     },
     {
         collection: "users"

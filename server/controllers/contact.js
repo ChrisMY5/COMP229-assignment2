@@ -1,3 +1,5 @@
+/* Man Young Oh / 301161472 / COMP229-005 */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -5,6 +7,7 @@ let mongoose = require('mongoose');
 // create a reference to model
 let Contact = require ('../models/contact');
 
+// activate displaying the contactlist
 module.exports.displayContactList = (req, res, next) => {
     Contact.find((err, contactList) => {
         if(err)
@@ -23,13 +26,14 @@ module.exports.displayContactList = (req, res, next) => {
     });
 }
 
-
+// activate to diaply the page of Adding a new contact
 module.exports.displayAddPage = (req, res, next) => {
     res.render('contact/add', 
     {title: 'Add Contact', 
     displayName: req.user ? req.user.displayName : ''});
 }
 
+// activate actual process of adding new contac
 module.exports.processAddPage = (req, res, next) => {
     let newContact = Contact({
         "name": req.body.name,
@@ -51,6 +55,7 @@ module.exports.processAddPage = (req, res, next) => {
     });
 }
 
+// activate to display of Edit page
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -71,6 +76,7 @@ module.exports.displayEditPage = (req, res, next) => {
     });
 }
 
+// activate actual process of Editting the specific contact data
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -95,6 +101,7 @@ module.exports.processEditPage = (req, res, next) => {
     });
 }
 
+// remove a selected contact list 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 

@@ -1,3 +1,5 @@
+/* Man Young Oh / 301161472 / COMP229-005 */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -9,7 +11,7 @@ let passport = require('passport');
 
 let contactController = require('../controllers/contact')
 
-// helper function for guard purposes
+// helper function for protect modification functions
 function requireAuth(req, res, next)
 {
     // check if the user is logged in

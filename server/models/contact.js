@@ -1,3 +1,5 @@
+/* Man Young Oh / 301161472 / COMP229-005 */
+
 let mongoose = require('mongoose');
 
 //create a model class
